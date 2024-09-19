@@ -1,0 +1,286 @@
+# 1.Introduction to DataTypes
+# Python strings
+
+greeting = "Good Morning!"
+letter = 'b'
+
+print(type(greeting))  
+print(type(letter))    
+
+#Python List (all list methods)
+# 1. append()
+fruits: list[str] = ['Apple', 'Banana', 'Mango']
+fruits.append('Orange')
+print(fruits)  # Output: ['Apple', 'Banana', 'Mango', 'Orange']
+
+# 2. clear()
+fruits: list[str] = ['Apple', 'Banana', 'Mango']
+fruits.clear()
+print(fruits)  # Output: []
+
+# 3. copy()
+fruits: list[str] = ['Apple', ['Banana', 'Orange'], 'Mango']
+copy_fruits: list[str] = fruits.copy()
+copy_fruits.remove('Mango')
+copy_fruits[1][1] = 'Grapes'
+print(fruits)        # Output: ['Apple', ['Banana', 'Grapes'], 'Mango']
+print(copy_fruits)   # Output: ['Apple', ['Banana', 'Grapes']]
+
+# 4. count()
+fruits: list[str] = ['Apple', 'Orange', 'Banana', 'Mango']
+orange_count = fruits.count('Orange')
+print(orange_count)  # Output: 1
+kiwi_count = fruits.count('Kiwi')
+print(kiwi_count)  # Output: 0
+
+# 5. extend()
+fruits: list[str] = ['Apple', 'Banana', 'Mango']
+more_fruits: list[str] = ['Kiwi', 'Strawberry']
+fruits.extend(more_fruits)
+print(fruits)  # Output: ['Apple', 'Banana', 'Mango', 'Kiwi', 'Strawberry']
+
+# 6. index()
+fruits: list[str] = ['Apple', 'Banana', 'Mango']
+print(fruits.index('Apple'))  # Output: 0
+print(fruits.index('Mango'))  # Output: 2
+
+# 7. insert()
+fruits: list[str] = ['Apple', 'Orange', 'Banana', 'Mango']
+fruits.insert(1, 'Kiwi')
+print(fruits)  # Output: ['Apple', 'Kiwi', 'Orange', 'Banana', 'Mango']
+fruits.insert(5, 'Grapes')
+print(fruits)  # Output: ['Apple', 'Kiwi', 'Orange', 'Banana', 'Mango', 'Grapes']
+
+# 8. pop()
+fruits: list[str] = ['Apple', 'Orange', 'Banana', 'Mango']
+popped_fruit = fruits.pop(2)
+print(fruits)  # Output: ['Apple', 'Orange', 'Mango']
+print(popped_fruit)  # Output: 'Banana'
+
+# 9. remove()
+fruits: list[str] = ['Apple', 'Orange', 'Banana', 'Mango']
+fruits.remove('Banana')
+print(fruits)  # Output: ['Apple', 'Orange', 'Mango']
+
+# 10. reverse()
+fruits: list[str] = ['Apple', 'Orange', 'Banana', 'Mango']
+fruits.reverse()
+print(fruits)  # Output: ['Mango', 'Banana', 'Orange', 'Apple']
+
+# 11. sort()
+fruits: list[str] = ['Apple', 'Kiwi', 'Banana', 'Strawberry']
+fruits.sort()  # Sorts alphabetically
+print(fruits)  # Output: ['Apple', 'Banana', 'Kiwi', 'Strawberry']
+
+fruits.sort(key=lambda name: len(name))  # Sorts based on the length of the name
+print(fruits)  
+
+# Python Tuples
+numbers = (10, 20, 30, 40)
+print(type(numbers)) 
+
+
+# Python Operators
+#Basic operator in python
+x = 50
+y = 12
+
+# Addition
+sum_result = x + y
+print(sum_result)  # Output: 62
+
+# Subtraction
+sub_result = x - y
+print(sub_result)  # Output: 38
+
+# Multiplication
+mul_result = x * y
+print(mul_result)  # Output: 600
+
+# Division
+div_result = x / y
+print(div_result)  # Output: 4.166666666666667
+
+# Modulus (remainder)
+mod_result = x % y
+print(mod_result)  # Output: 2
+
+# Floor Division
+floor_div_result = x // y
+print(floor_div_result)  # Output: 4
+
+# Logical NOT operator on boolean
+x = 0
+y = 1
+if not x:  
+    print("Logical: x is False")
+
+if not y:  
+    print("Logical: y is False")
+else:
+    print("Logical: y is True")
+
+# Bitwise NOT operator on integers
+p = 0b1100 
+q = ~p    
+print(f"Bitwise NOT of p (0b1100) is: {bin(q)}")
+
+
+# Ternary operator
+y = 20
+
+# First if-else condition
+if y == 20:
+    print("Correct")  
+else:
+    print("Incorrect")
+
+# Second if-else condition
+if y == 30:
+    print("Correct")   
+else:
+    print("Incorrect")  
+
+# Division operator in python
+x = 40
+y = 80
+z = 120
+
+print(x / y)  
+print(y / z)  
+print(z / x) 
+
+# Any & all in python
+numbers = [21, 45, 60, 85]  
+odd = lambda x: x % 2 != 0
+result = [odd(number) for number in numbers]
+
+if any(result):
+    print("There is at least one odd number!")
+else:
+    print("No number is odd!")
+
+if all(result):
+    print("All numbers are odd!")
+else:
+    print("Not all numbers are odd!")
+
+# Inplace and standard operators in python
+# In-place operators
+y = 5
+print(y)    
+y *= 3     
+print(y)   
+
+# standard operators
+m = 20
+n = 4
+print(m * n)   # Multiplication
+print(m / n)   # Division (result is a float)
+print(m + n)   # Addition
+print(m - n)   # Subtraction
+print(m // n)  # Floor division (integer division)
+print(m % n)   # Modulus (remainder of division)
+print(m ** n)  # Exponentiation (m to the power of n)
+
+# Operator function in python | Set – 1
+import operator
+
+x = 20
+y = 5
+
+print(operator.add(x, y))         # Addition
+print(operator.sub(x, y))         # Subtraction
+print(operator.mul(x, y))         # Multiplication
+print(operator.truediv(x, y))     # True division (float result)
+print(operator.floordiv(x, y))    # Floor division (integer result)
+print(operator.pow(x, y))         # Exponentiation (x raised to the power of y)
+print(operator.mod(x, y))         # Modulus (remainder of division)
+
+# Comparison operators
+print(operator.lt(x, y))          # Less than
+print(operator.le(x, y))          # Less than or equal to
+print(operator.eq(x, y))          # Equal to
+print(operator.gt(x, y))          # Greater than
+print(operator.ge(x, y))          # Greater than or equal to
+print(operator.ne(x, y))          # Not equal to
+
+#inplace operator | Set -1
+#iadd() and iconcat()
+import operator
+x = operator.iadd(2,3);
+print("The value of after adding and assigning:",end="")
+print(x)
+y = "Hello"
+z = "World"
+y = operator.iconcat(y,z)
+print("The string after concatenation is :", end="")
+print(y)
+
+#isub() and #imul()
+import operator
+x = operator.isub(2,3);
+print("The value of after subtracting and assigning:",end="")
+print(x)
+x = operator.imul(2,3);
+print("The value of after multiplying and assigning:",end="")
+print(x)
+
+#itruediv() and imod()
+import operator
+x = operator.itruediv(10,5);
+print("The value of after dividing and assigning:",end="")
+print(x)
+x = operator.imod(10,6);
+print("The value of after modulus and assigning:",end="")
+print(x)
+
+# Logic Gates in Python
+# Logical And
+a = 5
+b = 3
+c = 2
+print(a>b and a>c)
+print(a>b and a<c)
+print(a<b and a>c)
+print(a<b and a<c)
+# Logical or
+a = 5
+b = 3
+c = 2
+print(a>b or a>c)
+print(a>b or a<c)
+print(a<b or a>c)
+print(a<b or a<c)
+# logical not
+a = 5
+b = 3
+print(not(a<b))
+print(not(a>b))
+
+# Difference between == and is operator in Python
+# == operator
+num1=5
+num2=3
+print(num1 == num2)
+# is operator
+num1=10
+num2=10
+print(num1 is num2)
+
+# Python Membership and Identity Operators | in, not in, is, is not
+# Python Membership
+str1 = 'in' , 'not in' , 'is' , 'is not'
+print(str1)
+print("in" in str1)
+print("is" in str1)
+print("of" in str1)
+print("is not" in str1)
+# Identity Operators
+a = 12
+b = 12
+print(a is b)
+c = 12
+print(a is c)
+d = '10'
+print(b is d)
